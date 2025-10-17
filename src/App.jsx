@@ -1,3 +1,4 @@
+/*
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -29,6 +30,34 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
+  )
+}
+
+export default App
+*/
+import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import ProductList from './components/ProductList'
+import HomePage from './pages/HomePage'
+import Cart from './components/Cart'
+import ProductDetails from './pages/ProductDetails'
+import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />        
+      </Routes>
+      {/* <Hero /> */}
+      {/* <ProductList /> */}
+      <Footer />
+    </div>
   )
 }
 
